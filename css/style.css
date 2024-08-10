@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+:root{
+    --theme-color-1: #fcc822;
+    --theme-color-2: #333333;
+    --bg-color: white;
+    --primary-font: 'Poppins', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--primary-font);
+}
+
+body{
+    padding: 1vh 2%;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 1%;
+}
+
+header nav{
+    width: 50%;
+}
+
+header ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5%;
+    padding: 0 5%;
+}
+
+header li{
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+    color: #33333365;
+    transition: all 0.3s ease;
+}
+
+header a:hover{
+    color: var(--theme-color-1);
+}
+
+.btn {
+    padding: 1vh 4%;
+    font-size: medium;
+    border: 2px solid var(--theme-color-1);
+    transition: all 0.2s ease;
+}
+
+.btn-primary{
+    color: var(--bg-color);
+    background-color: var(--theme-color-1);
+}
+
+.btn-secondary{
+    color: var(--theme-color-1);
+    background-color: var(--bg-color);
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-primary:hover{
+    color: var(--theme-color-1);
+    background-color: var(--bg-color);
+}
+
+.btn-secondary:hover{
+    color: var(--bg-color);
+    background-color: var(--theme-color-1);
+}
+
+.toggle-btn{
+    display: none !important;
+    background: none;
+    border: 2px solid var(--theme-color-1);
+    color: var(--theme-color-1);
+    padding: 0 7px;
+    font-size: 25px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn:hover{
+    cursor: pointer;
+    background-color: var(--theme-color-1);
+    color: white;
+}
+
+main{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 87vh;
+    padding: 0 10%;
+}
+
+main section{
+    background-color: rgba(255, 255, 255, 0.529);
+}
+
+main h1{
+    color: var(--theme-color-2);
+    font-size: 50px;
+    font-family: var(--secondary-font);
+    margin-bottom: 5vh;
+}
+
+main p{
+    margin-bottom: 5vh;
+    color: #828282;
+    font-family: var(--secondary-font);
+    border-left: 3px solid var(--theme-color-2);
+    padding: 1vh 4%;
+    transition: all .2s ease;
+}
+
+main p:hover{
+    border-color: var(--theme-color-1);
+    color: var(--theme-color-2);
+}
+
+main a{
+    text-decoration: none;
+    color: var(--theme-color-1);
+    margin-left: 5%;
+}
+
+main img{
+    position: absolute;
+    z-index: -1;
+    right: 10%;
+}
+
+@media (max-width: 700px) {
+    main img{
+        display: none;
+    }
+    nav{
+        display: block;
+        position: absolute;
+        background-color: #FCC822;
+        top: 10vh;
+        left: 0;
+        width: 96vw !important;
+        padding: 0 2vh;
+        z-index: 1;
+        max-height: 0; /* Start with a height of 0 */
+        overflow: hidden; /* Hide the overflowing content */
+        transition: all 0.5s ease; /* Add a transition for max-height */
+    }
+    .show{
+        max-height: 300px; /* Adjust this value to the height of your nav content */
+        padding: 2vh;
+    }
+    nav ul{
+        padding: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    nav a{
+        display: block;
+        width: 100%;
+        padding: 1vh 0;
+        border: 2px solid var(--theme-color-1);
+        color: white;
+    }
+    nav a:hover{
+        background-color: var(--bg-color);
+    }
+    .toggle-btn{
+        display: block !important;
+    }
+}
