@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 
 <body>
@@ -17,7 +21,7 @@
             <ul>
                 <li><a href="">How it works?</a></li>
                 <li><a href="">Features</a></li>
-                <li><a href="">About us</a></li>
+                <li><a href="./pages/aboutus.html">About us</a></li>
             </ul>
         </nav>
         <button id="navbar-toggle-btn" class="toggle-btn" type="menu">
@@ -30,11 +34,52 @@
             <h1>Learn <br> new concepts <br> for each question</h1>
             <p>We help you prepare for exams and quizes</p>
             <div>
-                <button class="btn btn-primary" type="button">Start solving</button>
+                <button class="btn btn-primary" type="button" onclick="toggleQuizForm()">Start solving</button>
                 <a href="#">Know more</a>
             </div>
         </section>
         <img src="./images/image.png" alt="">
+        <div id="form-container" class="hidden">
+            <form action="" id="ctg-form">
+                <i id="close-form-icon" class="fas fa-times" onclick="closeQuizForm()"></i>
+                <h1>Choose your favorite topic</h1>
+                <fieldset id="categories">
+                    <!-- <legend>Select one or more topics to start quiz</legend>
+                    
+                    <label for="ctg-1">
+                        category 1
+                        <input type="checkbox" name="ctg-1" id="ctg-1" onchange="topicSelectorEventHandler(this)">
+                        <div class="checked"></div>
+                    </label>
+                    <label for="ctg-2">
+                        category 2
+                        <input type="checkbox" name="ctg-2" id="ctg-2" onchange="topicSelectorEventHandler(this)">
+                        <div class="checked"></div>
+                    </label>
+                    <label for="ctg-3">
+                        category 3
+                        <input type="checkbox" name="ctg-3" id="ctg-3" onchange="topicSelectorEventHandler(this)">
+                        <div class="checked"></div>
+                    </label>
+                    <label for="ctg-4">
+                        category 4
+                        <input type="checkbox" name="ctg-4" id="ctg-4" onchange="topicSelectorEventHandler(this)">
+                        <div class="checked"></div>
+                    </label>
+                    <label for="ctg-5">
+                        category 5
+                        <input type="checkbox" name="ctg-5" id="ctg-5" onchange="topicSelectorEventHandler(this)">
+                        <div class="checked"></div>
+                    </label>
+                    <label for="ctg-6">
+                        category 6
+                        <input type="checkbox" name="ctg-6" id="ctg-6" onchange="topicSelectorEventHandler(this)">
+                        <div class="checked"></div>
+                    </label> -->
+                </fieldset>
+                <button id="start-quiz" class="btn btn-primary" type="submit">Start Quiz</button>
+            </form>
+        </div>
     </main>
 
 </body>

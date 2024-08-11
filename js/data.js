@@ -721,3 +721,20 @@ const quizQuestions = [
         correctAnswer: "a"
     }
 ];
+
+
+const fs = require('fs')
+const jsonData = JSON.stringify(quizQuestions)
+
+
+fs.writeFile('data.json', jsonData, (err) => {
+    if(err){
+        console.log(err)
+    }
+    else{
+        console.log('data written to file succesfully')
+    }
+})
+
+
+const categories = Array.from(new Set(quizQuestions.map(({category , ...rest}) => category)))
