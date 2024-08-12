@@ -119,7 +119,6 @@ const quizQuestions = [
         },
         correctAnswer: "a"
     },
-    // Additional questions would follow the same format...
     {
         id: 11,
         category: "Front-End",

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quix App</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quizPageStyles.css">
 </head>
 <body>
     <header>
@@ -23,5 +24,21 @@
         </button>
     </header>
     <hr>
+    <main>
+        <div id="question-number-tracker">
+
+        </div>
+        <div id="questions-container">
+            <form id="questions-form" action="">
+                
+            </form>
+            <button id="prev-btn" type="button" class="btn">Previous</button>
+            <button id="next-btn" type="button" class="btn btn-primary">Next</button>
+            <a id="skip-btn">Skip</a>
+            <button id="submit-quiz-btn" class="btn btn-primary hidden" type="submit">Submit Quiz</button>
+        </div>
+    </main>
 </body>
+<script src="../js/quizPageLogic.js"></script>
+<script src="../js/script.js"></script>
 </html>
