@@ -22,7 +22,6 @@ const fetchData = async (url) => {
         questions = getRandomElemets(data.filter((question) => {
             return categories.find(category => category === question.category)
         }), 5)
-        console.log(questions)
         generateQuestions()
         const currentQuestionElement = document.getElementById(`q${questions[pointer].id}`)
         currentQuestionElement.classList.add('show')
@@ -91,36 +90,26 @@ const onPageLoad = () => {
     fetchData('../data/data.json')
 }
 
-const nextSubmitBtnsToggle = () => {
-    submitQuizBtn.classList.toggle('hidden')
-    nextBtn.classList.toggle('hidden')
-}
-
 document.addEventListener('DOMContentLoaded' , onPageLoad())
 
 nextBtn.addEventListener('click', () => {
     if (pointer < questions.length - 1) {
-        let currentQuestionElement = document.getElementById(`q${questions[pointer].id}`)
-        currentQuestionElement.classList.remove('show')
+        let temp = pointer
         pointer += 1
-        currentQuestionElement = document.getElementById(`q${questions[pointer].id}`)
-        currentQuestionElement.classList.add('show')
-    }
-    if (pointer === questions.length - 1) {
-        nextSubmitBtnsToggle()
+        changeQuestion(temp, pointer)
     }
 })
 
 prevBtn.addEventListener('click', () => {
-    if (pointer === questions.length - 1) {
-        nextSubmitBtnsToggle()
-    }
     if (pointer > 0) {
-        let currentQuestionElement = document.getElementById(`q${questions[pointer].id}`)
-        currentQuestionElement.classList.remove('show')
+        // pointer store the index for question to be displayed
+        // to change question we need the index of the question we need to hide
+        // and the index of question we need to show.
+        // we store the index of first one in temp and update pointer and pass
+        // both to changeQuestion function
+        let temp = pointer
         pointer -= 1
-        currentQuestionElement = document.getElementById(`q${questions[pointer].id}`)
-        currentQuestionElement.classList.add('show')
+        changeQuestion(temp, pointer)
     }
 })
 
@@ -148,7 +137,25 @@ submitQuizBtn.addEventListener('click', (e) => {
     completeBtn = document.getElementById('complete-btn')
 })
 
+document.querySelectorAll('#question-number-tracker label').forEach(label => {
+    label.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const inputId = event.target.getAttribute('for')
+        const newQuestion = Number(inputId.split('').reverse()[0])
+
+        changeQuestion(pointer,newQuestion)
+        pointer = newQuestion
+    })
+})
+
 const backToHome = () => {
     localStorage.setItem('categories', '')
     window.location.href = '/'
+}
+
+const changeQuestion = (currentQuestion, nextQuestion) => {
+    document.getElementById(`q${questions[currentQuestion].id}`).classList.remove('show')
+    document.getElementById(`q-no-${nextQuestion}`).checked = true
+    document.getElementById(`q${questions[nextQuestion].id}`).classList.add('show')
 }

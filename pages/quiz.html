@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/quizPageStyles.css">
 </head>
+
 <body>
     <header>
         <div>
@@ -14,9 +16,9 @@
         </div>
         <nav id="navbar">
             <ul>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="">How it works?</a></li>
                 <li><a href="">Features</a></li>
-                <li><a href="./aboutus.html">About us</a></li>
             </ul>
         </nav>
         <button id="navbar-toggle-btn" class="toggle-btn" type="menu">
@@ -26,20 +28,44 @@
     <hr>
     <main>
         <section id="question-number-tracker">
-
+            <fieldset>
+                <label for="q-no-0">
+                    0
+                    <input id="q-no-0" type="radio" name="question-number" value="0" checked>
+                </label>
+                <label for="q-no-1">
+                    1
+                    <input id="q-no-1" type="radio" name="question-number" value="1">
+                </label>
+                <label for="q-no-2">
+                    2
+                    <input id="q-no-2" type="radio" name="question-number" value="2">
+                </label>
+                <label for="q-no-3">
+                    3
+                    <input id="q-no-3" type="radio" name="question-number" value="3">
+                </label>
+                <label for="q-no-4">
+                    4
+                    <input id="q-no-4" type="radio" name="question-number" value="4">
+                </label>
+            </fieldset>
         </section>
         <section id="questions-container">
             <form id="questions-form" action="">
-                
+
             </form>
-            <button id="prev-btn" type="button" class="btn">Previous</button>
-            <button id="next-btn" type="button" class="btn btn-primary">Next</button>
-            <a id="skip-btn">Skip</a>
-            <button id="submit-quiz-btn" class="btn btn-primary hidden" type="submit">Submit Quiz</button>
+            <div id="btns">
+                <div>
+                    <button id="prev-btn" type="button" class="btn">Previous</button>
+                    <button id="next-btn" type="button" class="btn btn-secondary">Next</button>
+                </div>
+                <button id="submit-quiz-btn" class="btn btn-primary" type="submit">Submit Quiz</button>
+            </div>
         </section>
-        
     </main>
 </body>
 <script src="../js/quizPageLogic.js"></script>
 <script src="../js/script.js"></script>
+
 </html>
