@@ -2,7 +2,8 @@ const nextBtn = document.getElementById('next-btn')
 const prevBtn = document.getElementById('prev-btn')
 const submitQuizBtn = document.getElementById('submit-quiz-btn')
 const questionForm = document.getElementById('questions-form')
-
+const mainElement = document.querySelector('main')
+let completeBtn = undefined
 
 let categories = localStorage.getItem('categories').split(',')
 
@@ -12,21 +13,47 @@ const fetchData = async (url) => {
     try {
         const resp = await fetch(url)
         if (!resp.ok) {
-            throw new Error('404 not Found')
+            throw new Error('Something went wrong with response')
         }
         const data = await resp.json()
-        questions = data.filter((question) => {
+        if (!categories[0]){
+            throw new Error('No data Available!')
+        }
+        questions = getRandomElemets(data.filter((question) => {
             return categories.find(category => category === question.category)
-        })
+        }), 5)
+        console.log(questions)
         generateQuestions()
         const currentQuestionElement = document.getElementById(`q${questions[pointer].id}`)
         currentQuestionElement.classList.add('show')
     } catch (error) {
-        console.log(error)
+        let content = `<section id="score-card-container">
+            <article style='background-color:white; text-align:center; padding: 2vh 5%;' id="error">
+                <div style='margin-bottom: 3vh'>
+                    <h2 style='margin-bottom: 1vh; font-family: var(--secondary-font)'>404 NOT FOUND</h2>
+                    <p>${error}</p>
+                </div>
+                <button id='complete-btn' class="btn btn-secondary" onclick="backToHome()">Return to Home</button>
+            </article>
+        </section>`
+        generateReturnElement(content)
     }
 }
 
 let pointer = 0
+
+const getRandomElemets = (arr, count) => {
+    for (let i = arr.length - 1 ; i > 0 ; i-- ){
+        const j = Math.floor(Math.random() * (i + 1))
+        
+        const temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+        
+    }
+
+    return arr.slice(0 , count)
+}
 
 const createFieldset = (question) => {
     return `<fieldset id="q${question.id}">
@@ -54,6 +81,10 @@ const generateQuestions = () => {
     questions.forEach((question) => {
         questionForm.innerHTML  += createFieldset(question)
     })
+}
+
+const generateReturnElement = (content) => {
+    mainElement.innerHTML += content
 }
 
 const onPageLoad = () => {
@@ -104,5 +135,20 @@ submitQuizBtn.addEventListener('click', (e) => {
         }
     })
 
-    console.log(score)
+    const scoreContent = `<section id="score-card-container">
+            <article id="score-card">
+                <div>
+                    <h2>Your score</h2>
+                    <p>${score}</p>
+                </div>
+                <button id='complete-btn' class="btn btn-primary" onclick="backToHome()">Return to Home</button>
+            </article>
+        </section>`
+    generateReturnElement(scoreContent)
+    completeBtn = document.getElementById('complete-btn')
 })
+
+const backToHome = () => {
+    localStorage.setItem('categories', '')
+    window.location.href = '/'
+}

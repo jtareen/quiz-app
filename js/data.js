@@ -64,10 +64,10 @@ const quizQuestions = [
         category: "Front-End",
         question: "Which HTML element is used to define a table row?",
         options: {
-            a: "<tr>",
-            b: "<td>",
-            c: "<th>",
-            d: "<table>"
+            a: "&lt;tr&gt;",
+            b: "&lt;td&gt;",
+            c: "&lt;th&gt;",
+            d: "&lt;table&gt;"
         },
         correctAnswer: "a"
     },
@@ -184,10 +184,10 @@ const quizQuestions = [
         category: "Front-End",
         question: "Which of the following is used to define a clickable button in HTML?",
         options: {
-            a: "<button>",
-            b: "<click>",
-            c: "<input>",
-            d: "<btn>"
+            a: "&lt;button&gt;",
+            b: "&lt;click&gt;",
+            c: "&lt;input&gt;",
+            d: "&lt;btn&gt;"
         },
         correctAnswer: "a"
     },
@@ -364,10 +364,10 @@ const quizQuestions = [
         category: "Front-End",
         question: "Which HTML tag is used to define a hyperlink?",
         options: {
-            a: "<link>",
-            b: "<a>",
-            c: "<href>",
-            d: "<hyperlink>"
+            a: "&lt;link&gt;",
+            b: "&lt;a&gt;",
+            c: "&lt;href&gt;",
+            d: "&lt;hyperlink&gt;"
         },
         correctAnswer: "b"
     },
@@ -544,10 +544,10 @@ const quizQuestions = [
         category: "Front-End",
         question: "Which HTML element is used to display a list of items?",
         options: {
-            a: "<list>",
-            b: "<ul>",
-            c: "<items>",
-            d: "<ol>"
+            a: "&lt;list&gt;",
+            b: "&lt;ul&gt;",
+            c: "&lt;items&gt;",
+            d: "&lt;ol&gt;"
         },
         correctAnswer: "b"
     },
@@ -602,7 +602,7 @@ const quizQuestions = [
     {
         id: 51,
         category: "Front-End",
-        question: "What is the purpose of the 'src' attribute in an <img> tag?",
+        question: "What is the purpose of the 'src' attribute in an &lt;img&gt; tag?",
         options: {
             a: "To define the image's source file",
             b: "To set the image's style",
@@ -664,10 +664,10 @@ const quizQuestions = [
         category: "Front-End",
         question: "Which HTML tag is used to create a dropdown menu?",
         options: {
-            a: "<select>",
-            b: "<dropdown>",
-            c: "<menu>",
-            d: "<list>"
+            a: "&lt;select&gt;",
+            b: "&lt;dropdown&gt;",
+            c: "&lt;menu&gt;",
+            d: "&lt;list&gt;"
         },
         correctAnswer: "a"
     },
