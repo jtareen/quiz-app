@@ -40,6 +40,10 @@ To run this app locally, follow these steps:
 - **Answering Questions**: Select one of the options for each question, then click "Next" to move on to the next question.
 - **Finishing the Quiz**: After answering all the questions, your score will be displayed along with the correct answers.
 
+## Live site
+
+Check the live site at [quizapp](https://jtareen.github.io/quiz-app/)
+
 ## Contributing
 
 If you'd like to contribute to this project, feel free to fork the repository and submit a pull request with your changes. Contributions are welcome!
