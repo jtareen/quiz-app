@@ -21,7 +21,7 @@ const fetchData = async (url) => {
 
 const toggleQuizForm = () => {
     topicSelectorFormContainer.classList.remove('hidden')
-    fetchData('https://jtareen.github.io/quiz-app/data/data.json')
+    fetchData('data/data.json')
         .then((data) => {
             if (!data) {
                 throw new Error('404! data not Found')
