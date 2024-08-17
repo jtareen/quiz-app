@@ -151,7 +151,7 @@ document.querySelectorAll('#question-number-tracker label').forEach(label => {
 
 const backToHome = () => {
     localStorage.setItem('categories', '')
-    window.location.href = '/'
+    window.location.href = '../index.html'
 }
 
 const changeQuestion = (currentQuestion, nextQuestion) => {
