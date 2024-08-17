@@ -42,7 +42,7 @@ To run this app locally, follow these steps:
 
 ## Live site
 
-Check the live site at [quizapp](https://jtareen.github.io/quiz-app/)
+Check the live site at [quizapp](https://jtareen.github.io/quiz-app/).
 
 ## Contributing
 
